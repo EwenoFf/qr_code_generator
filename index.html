@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>QR Code Generator</h1>
+
+      <label>URL</label>
+      <input type="text" id="urlInput" placeholder="https://example.com" />
+
+      <div class="colors">
+        <div>
+          <label>Couleur des données</label>
+          <input type="color" id="dataColor" value="#56cfe1" />
+        </div>
+        <div>
+          <label>Couleur des repères</label>
+          <input type="color" id="finderColor" value="#5390d9" />
+        </div>
+      </div>
+
+      <div class="card">
+        <canvas id="qrCanvas"></canvas>
+      </div>
+
+      <button onclick="downloadQR()">Télécharger le QR Code</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
