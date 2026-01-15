@@ -93,11 +93,7 @@ ttk.Button(
     command=choose_data_color
 ).pack(fill="x", pady=5)
 
-ttk.Button(
-    color_frame,
-    text="Couleur des repères",
-    command=choose_finder_color
-).pack(fill="x", pady=5)
+
 
 # Carte QR
 card = ttk.Frame(app, padding=15, bootstyle="dark")
