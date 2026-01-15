@@ -9,11 +9,11 @@
     <div class="container">
       <h1>QR Code Generator</h1>
 
+      <!-- URL -->
       <label>URL</label>
       <input type="text" id="urlInput" placeholder="https://example.com" />
-      <label>Nom du fichier à enregister :</label>
-      <input type="text" id="fileNameInput" placeholder="qrcode" />
 
+      <!-- Couleurs -->
       <div class="colors">
         <div>
           <label>Couleur des données</label>
@@ -25,10 +25,16 @@
         </div>
       </div>
 
+      <!-- Aperçu QR -->
       <div class="card">
         <canvas id="qrCanvas"></canvas>
       </div>
 
+      <!-- 🆕 Nom du fichier (ICI) -->
+      <label>Nom du fichier</label>
+      <input type="text" id="fileNameInput" placeholder="qrcode" />
+
+      <!-- Téléchargement -->
       <button onclick="downloadQR()">Télécharger le QR Code</button>
     </div>
 
