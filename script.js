@@ -23,11 +23,18 @@ function updateQR() {
     },
   });
 }
+const fileNameInput = document.getElementById("fileNameInput");
 
 function downloadQR() {
   if (!canvas) return;
+
+  let fileName = "qrcode"; // nom par défaut
+  if (fileNameInput && fileNameInput.value.trim() !== "") {
+    fileName = fileNameInput.value.trim();
+  }
+
   const link = document.createElement("a");
-  link.download = "qrcode.png";
+  link.download = fileName + ".png";
   link.href = canvas.toDataURL();
   link.click();
 }
