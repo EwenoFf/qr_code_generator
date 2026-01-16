@@ -1,13 +1,14 @@
+/* global QRCode */
+
 const urlInput = document.getElementById("urlInput");
 const dataColor = document.getElementById("dataColor");
-const finderColor = document.getElementById("finderColor");
+const fileNameInput = document.getElementById("fileNameInput");
 const canvas = document.getElementById("qrCanvas");
 
 function updateQR() {
-  // Vérification que tout existe
   if (!urlInput || !canvas || !dataColor) return;
 
-  const url = urlInput.value;
+  const url = urlInput.value.trim();
   if (!url) {
     const ctx = canvas.getContext("2d");
     if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -23,22 +24,20 @@ function updateQR() {
     },
   });
 }
-const fileNameInput = document.getElementById("fileNameInput");
 
 function downloadQR() {
   if (!canvas) return;
 
-  let fileName = "qrcode"; // nom par défaut
+  let fileName = "qrcode";
   if (fileNameInput && fileNameInput.value.trim() !== "") {
     fileName = fileNameInput.value.trim();
   }
 
   const link = document.createElement("a");
   link.download = fileName + ".png";
-  link.href = canvas.toDataURL();
+  link.href = canvas.toDataURL("image/png");
   link.click();
 }
 
 urlInput?.addEventListener("input", updateQR);
 dataColor?.addEventListener("input", updateQR);
-finderColor?.addEventListener("input", updateQR);
