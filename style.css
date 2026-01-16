@@ -1,64 +1,107 @@
-body {
-  background: #0f172a;
+* {
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  color: white;
+}
+
+/* FOND */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0b132b, #1c2541);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  color: white;
 }
 
+/* CARTE PRINCIPALE */
 .container {
-  background: #1e293b;
-  padding: 30px;
+  background: #1f2a44;
+  width: 380px;
+  padding: 25px;
   border-radius: 16px;
-  width: 360px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+
+  /* ⬇️ STRUCTURE */
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 14px;
 }
 
-h1 {
+/* TITRE */
+.container h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
+/* LABEL */
 label {
-  font-size: 14px;
+  font-size: 13px;
 }
 
+/* INPUT TEXTE */
 input[type="text"] {
   width: 100%;
   padding: 10px;
-  margin: 8px 0 15px;
-  border-radius: 8px;
+  border-radius: 6px;
   border: none;
+  outline: none;
 }
 
+/* ZONE COULEURS = LIGNE */
 .colors {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 15px;
+  align-items: flex-end;
+  gap: 15px;
 }
 
+/* BLOC COULEUR */
 .colors div {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
+/* INPUT COULEUR */
+input[type="color"] {
+  width: 70px;
+  height: 36px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* QR CARD */
 .card {
   background: white;
-  padding: 15px;
   border-radius: 12px;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  align-items: center;
 }
 
+/* QR */
+#qrCanvas {
+  width: 160px;
+  height: 160px;
+}
+
+/* BOUTON */
 button {
-  width: 100%;
-  padding: 12px;
-  background: #38bdf8;
+  margin-top: 8px;
+  background: #4cc9f0;
+  color: #0b132b;
+  font-weight: bold;
   border: none;
-  border-radius: 10px;
-  font-size: 16px;
+  border-radius: 12px;
+  padding: 14px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(76, 201, 240, 0.45);
 }
